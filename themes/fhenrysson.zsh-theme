@@ -21,10 +21,11 @@ patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset
 }
 
 PROMPT=$'[%*]:%{$fg_bold[magenta]%}%2~%{$reset_color%} (%{$fg_bold[blue]%}%?%{$reset_color%})> '
-RPROMPT='$(prompt_char) $(git_prompt_info) $(hg_prompt_info) $(git_prompt_status) $(enabled_virtualenv)'
+RPROMPT='$(prompt_char) $(git_prompt_info) $(hg_prompt_info) $(git_prompt_status) $(enabled_virtualenv) $(rvm_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}*%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-
+ZSH_THEME_RVM_PROMPT_PREFIX="%{$fg[blue]%}[%{$fg[red]%}"
+ZSH_THEME_RVM_PROMPT_SUFFIX="%{$fg[blue]%}]%{$reset_color%}"
