@@ -20,7 +20,7 @@ function hg_prompt_info {
 patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
 }
 
-PROMPT='[%*]:%{$fg_bold[magenta]%}%2~%{$reset_color%} (%{$fg_bold[blue]%}%?%{$reset_color%})> '
+PROMPT="[%*]:%{$fg_bold[magenta]%}%2~%{$reset_color%} (%{$fg_bold[blue]%}%?%{$reset_color%})> "
 RPROMPT='$(prompt_char) $(git_prompt_info) $(hg_prompt_info) $(git_prompt_status) $(enabled_virtualenv) $(rvm_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}["
