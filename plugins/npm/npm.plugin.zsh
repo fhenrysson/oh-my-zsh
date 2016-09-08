@@ -1,4 +1,12 @@
-eval "$(npm completion 2>/dev/null)"
+(( $+commands[npm] )) && {
+    __NPM_COMPLETION_FILE="${ZSH_CACHE_DIR}/npm_completion"
+
+    if [[ ! -f $__NPM_COMPLETION_FILE ]]; then
+        npm completion >! $__NPM_COMPLETION_FILE || rm -f $__NPM_COMPLETION_FILE
+    fi
+
+    source $__NPM_COMPLETION_FILE
+}
 
 <<<<<<< HEAD
 =======
@@ -23,3 +31,10 @@ alias npmE='PATH="$(npm bin)":"$PATH"'
 
 # Check which npm modules are outdated
 alias npmO="npm outdated"
+
+# Run npm start
+alias npmst="npm start"
+
+# Run npm test
+alias npmt="npm test"
+
